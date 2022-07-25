@@ -1,0 +1,15 @@
+# backendNodeJs
+Esse é um backend em nodejs
+*** Backend ***
+Framework: NodeJs com express
+Linguagem: Typescript
+Banco de dados: Postgres
+
+// Para tratamento de erro foi instalando uma biblioteca chamada express-async-errors
+// usu de middlewares
+// cors habilitado >yarn add @types/cors
+// Uso Prisma e Prisma/client para banco de dados na aplicação
+// >npx prisma init para configuração padrão do banco de dados
+// criar uma migration: yarn prisma migrate dev
+// biblioteca usada para criptografar senha do usuario bcryptjs instalando tipo: yarn add @types/bcryptjs -D
+// usando JWT(JSON Web Token) ... instalando >yarn add jsonwebtoken do tipo yarn add @types/jsonwebtoken -D
