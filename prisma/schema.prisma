@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// criar uma migration: yarn prisma migrate dev
+model Users {
+  id String @id @default(uuid())
+  username String
+  password String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("users")
+  tasks Tasks[]
+}
+
+model Tasks {
+  id String @id @default(uuid())
+  task String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  users Users @relation(fields: [user_id], references: [id]) //relacionamento id do usuario
+  
+  @@map("tasks")
+  user_id String
+
+}
